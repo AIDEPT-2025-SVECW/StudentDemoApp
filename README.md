@@ -2,6 +2,10 @@
 
 A Maven-based Java application that reads student details from an Excel file and automatically splits them into teams of specified size, writing each team to separate sheets in an output Excel file.
 
+### Note:
+
+The application can also be executed as a standard Java application by running the ABC class. Before doing so, please perform a Maven Clean and Build to ensure all dependencies are correctly resolved. Until Maven-related concepts are fully integrated or covered, running the application in this plain Java mode is a suitable alternative for development and testing purposes.
+
 ## Features
 
 - **Excel Integration**: Read student data from Excel files (.xlsx format)
@@ -75,8 +79,9 @@ mvn exec:java -Dexec.mainClass="com.example.StudentTeamGenerator"
 ```
 
 Follow the prompts to enter:
+
 - Input Excel file path
-- Output Excel file path  
+- Output Excel file path
 - Sheet name (optional - uses first sheet if not specified)
 - Team size (default: 10)
 
@@ -88,6 +93,7 @@ mvn exec:java -Dexec.mainClass="com.example.StudentTeamGenerator" \
 ```
 
 **Examples:**
+
 ```bash
 # Basic usage with defaults
 mvn exec:java -Dexec.mainClass="com.example.StudentTeamGenerator" \
@@ -102,14 +108,15 @@ mvn exec:java -Dexec.mainClass="com.example.StudentTeamGenerator" \
 
 Your input Excel file should have the following format:
 
-| Student ID | Student Name |
-|-----------|-------------|
-| STU001    | Alice Johnson |
-| STU002    | Bob Smith |
-| STU003    | Charlie Brown |
-| ...       | ... |
+| Student ID | Student Name  |
+| ---------- | ------------- |
+| STU001     | Alice Johnson |
+| STU002     | Bob Smith     |
+| STU003     | Charlie Brown |
+| ...        | ...           |
 
 **Requirements:**
+
 - First row should contain headers
 - Column A: Student ID
 - Column B: Student Name
@@ -118,11 +125,13 @@ Your input Excel file should have the following format:
 ## Output Format
 
 The application creates an output Excel file with multiple sheets:
+
 - **Team_1**: First team (up to specified team size)
 - **Team_2**: Second team (up to specified team size)
 - **Team_N**: Additional teams as needed
 
 Each sheet contains:
+
 - Formatted headers with blue background
 - Student ID and Name columns
 - Bordered cells for professional appearance
@@ -131,11 +140,13 @@ Each sheet contains:
 ## Example Usage
 
 1. **Create sample data:**
+
    ```bash
    mvn exec:java -Dexec.mainClass="com.example.util.SampleDataGenerator"
    ```
 
 2. **Generate teams:**
+
    ```bash
    mvn exec:java -Dexec.mainClass="com.example.StudentTeamGenerator" \
      -Dexec.args="sample_students.xlsx teams_output.xlsx"
@@ -148,4 +159,5 @@ Each sheet contains:
 ## Customization Options
 
 ### Change Team Size
+
 Modify the team size by passing it as the 4th argument
