@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.bvraju.svecw</groupId>
-  <artifactId>studentTeamGenerator</artifactId>
+  <groupId>com.bvraju.vit</groupId>
+  <artifactId>studentTeamGenerator123</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
   <name>Student Team Generator</name>
@@ -11,6 +11,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <poi.version> 5.4.1 </poi.version>
     </properties>
 
     <dependencies>
@@ -33,6 +34,8 @@
             <artifactId>slf4j-simple</artifactId>
             <version>2.0.9</version>
         </dependency>
+        
+        
         
         <!-- JUnit for testing -->
         <dependency>
